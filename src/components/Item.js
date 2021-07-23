@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Item({ name, category }) {
+function Item({ itemId ,name, category }) {
   const [isInCart, setIsInCart] = useState(false);
 
   function handleAddToCartClick() {
@@ -8,7 +8,7 @@ function Item({ name, category }) {
   }
 
   return (
-    <li className={isInCart ? "in-cart" : ""}>
+    <li className={isInCart ? "in-cart" : ""} key={itemId}>
       <span>{name}</span>
       <span className="category">{category}</span>
       <button
